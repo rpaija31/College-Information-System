@@ -50,7 +50,7 @@ public class College_Info extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 0, 0));
         setForeground(new java.awt.Color(255, 51, 102));
 
-        jPanel4.setBackground(new java.awt.Color(51, 255, 204));
+        jPanel4.setBackground(new java.awt.Color(169, 20, 82));
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
