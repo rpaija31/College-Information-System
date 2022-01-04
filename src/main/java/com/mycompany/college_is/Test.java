@@ -10,7 +10,7 @@ package com.mycompany.college_is;
  */
 public class Test {
     public static void main(String[] args) {
-        System.out.println("La suman ke garya");
+        System.out.println("La ke garya");
         System.out.println("Hello again conflict hai");
     }
     
