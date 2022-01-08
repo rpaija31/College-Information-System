@@ -642,8 +642,80 @@ public class College_Info extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_searchCategoryComboBoxActionPerformed
 
-    private void searchPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchPriceActionPerformed
+    //sorting the final price values stored in the array
+    public double[] sort(double[] priceList) {
+        for (int sortPosition = 0; sortPosition < priceList.length; sortPosition++) {
+            int minValuePosition = sortPosition;
+
+            for (int currentPosition = sortPosition + 1; currentPosition < priceList.length; currentPosition++) {
+                if (priceList[currentPosition] < priceList[minValuePosition]) {
+                    minValuePosition = currentPosition;
+                }
+            }
+
+            // swapping elements
+            double tempValue = priceList[minValuePosition];
+            priceList[minValuePosition] = priceList[sortPosition];
+            priceList[sortPosition] = tempValue;
+        }
         
+        return priceList;
+    }
+    
+    //binary search implementation for search by price 
+    public double binarySearch(double[] priceList, double price, int lowIndex, int highIndex) {
+        while (lowIndex <= highIndex) {
+            int mid = lowIndex + (highIndex - lowIndex) / 2;
+
+            if (priceList[mid] == price) {
+                return priceList[mid];
+            }
+
+            if (priceList[mid] < price) {
+                lowIndex = mid + 1;
+            } else {
+                highIndex = mid - 1;
+            }
+        }
+
+        return -1;
+    }
+    
+    private void searchPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchPriceActionPerformed
+        try {
+            double price = Double.parseDouble(search_tf.getText());
+            int tableRowCount = table.getRowCount();
+               
+            // checking if the entered price is negative or positive
+            if (price < 0) {
+                JOptionPane.showMessageDialog(this, "Price must not be negative!", "Invalid Price", JOptionPane.WARNING_MESSAGE);
+            } else {
+                double[] priceList = new double[table.getRowCount()];
+                for (int i = 0; i < tableRowCount; i++) {
+                    priceList[i] = Double.parseDouble(table.getValueAt(i, 4).toString());
+                }
+                // calling the sort() method to sort() the array
+                double[] sortedPriceList = sort(priceList);
+                
+                // calling binarySearch() method for searching the price key
+                double result = binarySearch(sortedPriceList, price, 0, priceList.length - 1);
+                if (result == -1) {
+                    JOptionPane.showMessageDialog(this, "No College Found for this price", "No Matching College", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    String collegeName = "";
+                    for (int i = 0; i < tableRowCount; i++) {
+                        if (Double.parseDouble(table.getValueAt(i, 4).toString()) == result) {
+                            // extracting appliance name if matching price is found
+                            collegeName = table.getValueAt(i, 1).toString();
+                        }
+                    }
+                    JOptionPane.showMessageDialog(this, "The College that matches the price is:\n" + collegeName, "Search by Price", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Enter valid price!!", "Invalid Price", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_searchPriceActionPerformed
 
     private void search_tfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_tfActionPerformed
@@ -651,6 +723,7 @@ public class College_Info extends javax.swing.JFrame {
     }//GEN-LAST:event_search_tfActionPerformed
 
     private void clearFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearFieldActionPerformed
+        id_tf.setText("");
         search_tf.setText(""); 
         name_tf.setText("");
         affiliation_tf.setText("");
