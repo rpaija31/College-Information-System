@@ -7,7 +7,6 @@ package com.mycompany.college_is;
 import java.awt.HeadlessException;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -15,7 +14,6 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Icon;
-import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -571,16 +569,19 @@ public class College_Info extends javax.swing.JFrame {
             String category = addCategoryComboBox.getSelectedItem().toString();
             String scholarship = null;
             boolean priceValid = true;
-
-            if(jRadioButton1.isSelected())
-                 scholarship = "YES";
-            else if(jRadioButton2.isSelected())
-                 scholarship = "NO";
+             
+            if(jRadioButton1.isSelected()) {
+                  scholarship = "YES";
+            }
+               
+            else if(jRadioButton2.isSelected()) {
+                scholarship = "NO";
+            }
 
             if (name_tf.equals("") || affiliation_tf.equals("") || price_tf.getText().equals("")){
                 JOptionPane.showMessageDialog(this, "Please fill all the fields!");
             }
-            else{
+            else{                
                 try {
                     price = Double.parseDouble(price_tf.getText());
 
@@ -590,7 +591,7 @@ public class College_Info extends javax.swing.JFrame {
                 }
                 if (priceValid == true){
                     if (price <= 0.00){
-                        JOptionPane.showMessageDialog(this, "Price cannot be negative!");
+                        JOptionPane.showMessageDialog(this, "Price cannot be negative or zero!");
                     } else{
                         Object[] add = {collegeID, name, category, affiliation, price, scholarship};
                         defaultTableModel.addRow(add);
@@ -626,7 +627,7 @@ public class College_Info extends javax.swing.JFrame {
     }//GEN-LAST:event_name_tfActionPerformed
 
     private void addCollegeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCollegeActionPerformed
-        add();        // TODO add your handling code here:
+        add(); 
     }//GEN-LAST:event_addCollegeActionPerformed
 
     private void searchCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchCategoryActionPerformed
