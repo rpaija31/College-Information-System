@@ -302,7 +302,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Price:"/>
+                <Property name="text" type="java.lang.String" value="Price(University Fee):"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -432,12 +432,18 @@
                                       <Component id="name_tf" alignment="0" max="32767" attributes="0"/>
                                       <Component id="affiliation_tf" alignment="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel10" alignment="1" min="-2" pref="69" max="-2" attributes="0"/>
-                                      <Component id="jLabel12" alignment="1" min="-2" pref="91" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
+                                          <Component id="jLabel12" min="-2" pref="91" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="addCollege" min="-2" pref="117" max="-2" attributes="0"/>
@@ -454,7 +460,7 @@
                               </Group>
                               <Component id="price_tf" min="-2" pref="105" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="236" max="32767" attributes="0"/>
                       </Group>
                       <Component id="jPanel7" alignment="1" max="32767" attributes="0"/>
                   </Group>
@@ -552,7 +558,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="42" green="30" red="3a" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Price:"/>
+                    <Property name="text" type="java.lang.String" value="Price(University Fee):"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel12">

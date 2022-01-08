@@ -177,7 +177,7 @@ public class College_Info extends javax.swing.JFrame {
         jPanel6.add(searchCategory, gridBagConstraints);
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Price:");
+        jLabel2.setText("Price(University Fee):");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -256,7 +256,7 @@ public class College_Info extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(58, 48, 66));
-        jLabel10.setText("Price:");
+        jLabel10.setText("Price(University Fee):");
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(58, 48, 66));
@@ -333,11 +333,15 @@ public class College_Info extends javax.swing.JFrame {
                             .addComponent(addCategoryComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(name_tf)
                             .addComponent(affiliation_tf))
-                        .addGap(246, 246, 246)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(246, 246, 246)
+                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(5, 5, 5))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel10)
+                                .addGap(18, 18, 18))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(addCollege, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -349,7 +353,7 @@ public class College_Info extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jRadioButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(price_tf, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(236, Short.MAX_VALUE))
             .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
@@ -682,7 +686,7 @@ public class College_Info extends javax.swing.JFrame {
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         Icon icon = new javax.swing.ImageIcon(getClass().getResource("/Icons/user-info-icon.png"));
-        JOptionPane.showMessageDialog(this, "Created By: \n\nAbhiskeh Thapa \nRashik Koirala \nRohit Paija \nSuman Mahat", "About", JOptionPane.INFORMATION_MESSAGE, icon);
+        JOptionPane.showMessageDialog(this, "Created By: \n\nAbhiskeh Thapa \nRashik Koirala \nRohit Paija Pun \nSuman Mahat", "About", JOptionPane.INFORMATION_MESSAGE, icon);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
