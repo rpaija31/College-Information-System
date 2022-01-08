@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Icon;
@@ -635,11 +636,37 @@ public class College_Info extends javax.swing.JFrame {
     }//GEN-LAST:event_addCollegeActionPerformed
 
     private void searchCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchCategoryActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_searchCategoryActionPerformed
 
     private void searchCategoryComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchCategoryComboBoxActionPerformed
-        // TODO add your handling code here:
+        // getting selected item from the search by category combobox
+        String category = searchCategoryComboBox.getSelectedItem().toString();
+
+        //initializing the array list to store the row index of the category found
+        ArrayList<Integer> categoryList = new ArrayList();
+        for (int i = 0; i < table.getRowCount(); i++) {
+            if (table.getModel().getValueAt(i, 2).equals(category)) {
+                //get the all row values at column index 0
+                categoryList.add(i);
+            }
+        }
+
+        // to store the college name that belongs to chosen category 
+        ArrayList<String> colleges = new ArrayList<>();
+        for (int i : categoryList) {
+            colleges.add(table.getValueAt(i, 1).toString());
+        }
+        int totalCollege = colleges.size();
+        String message = "There are " + totalCollege + " colleges for the " + category + " category.";
+        for (int i = 0; i < colleges.size(); i++) {
+            message += "\n" + (i + 1) + ". " + colleges.get(i);
+        }
+        if (categoryList.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No College Available for this Category", "Search by Category", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, message, "Category Search", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_searchCategoryComboBoxActionPerformed
 
     //sorting the final price values stored in the array
