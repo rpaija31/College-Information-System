@@ -228,6 +228,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="searchPrice">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Icons/search-icon.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Search College"/>
               </Properties>
               <Events>
@@ -242,13 +245,12 @@
             <Component class="javax.swing.JComboBox" name="searchCategoryComboBox">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="6">
+                  <StringArray count="5">
                     <StringItem index="0" value="Community College"/>
                     <StringItem index="1" value="Junior College"/>
                     <StringItem index="2" value="Women&apos;s College"/>
                     <StringItem index="3" value="Technical Institute"/>
                     <StringItem index="4" value="Professional Schools"/>
-                    <StringItem index="5" value=" "/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -266,6 +268,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="searchCategory">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Icons/search-icon.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Search College By Category"/>
               </Properties>
               <Events>
@@ -359,6 +364,9 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="clearTable">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Icons/clear-table-icon.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Clear Table"/>
               </Properties>
               <Events>
@@ -367,6 +375,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="deleteRow">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Icons/delete-row-icon.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Delete Row"/>
               </Properties>
               <Events>
@@ -400,20 +411,13 @@
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="22" pref="22" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="name_tf" alignment="0" pref="105" max="32767" attributes="0"/>
-                                              <Component id="affiliation_tf" alignment="1" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="addCategoryComboBox" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                                  <EmptySpace min="22" pref="22" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="addCategoryComboBox" max="32767" attributes="0"/>
+                                      <Component id="name_tf" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="affiliation_tf" alignment="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="250" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel10" alignment="1" min="-2" pref="69" max="-2" attributes="0"/>
                                       <Component id="jLabel12" alignment="1" min="-2" pref="91" max="-2" attributes="0"/>
@@ -421,10 +425,10 @@
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="addCollege" min="-2" pref="105" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Component id="clearField" min="-2" pref="105" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
+                                  <Component id="addCollege" min="-2" pref="117" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="clearField" min="-2" pref="117" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -467,10 +471,10 @@
                           </Group>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="addCollege" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="clearField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="addCollege" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="clearField" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="30" max="32767" attributes="0"/>
+                          <EmptySpace pref="55" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -511,6 +515,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="addCollege">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Icons/add-1-icon.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Add College"/>
                   </Properties>
                   <Events>
@@ -576,6 +583,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="clearField">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Icons/clear-fields-icon.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Clear Fields"/>
                   </Properties>
                   <Events>
@@ -587,10 +597,10 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="393" max="-2" attributes="0"/>
-                              <Component id="jLabel5" min="-2" pref="121" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jLabel5" min="-2" pref="121" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="417" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -618,13 +628,12 @@
                 <Component class="javax.swing.JComboBox" name="addCategoryComboBox">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="6">
+                      <StringArray count="5">
                         <StringItem index="0" value="Community College"/>
                         <StringItem index="1" value="Junior College"/>
                         <StringItem index="2" value="Women&apos;s College"/>
                         <StringItem index="3" value="Technical Institute"/>
                         <StringItem index="4" value="Professional Schools"/>
-                        <StringItem index="5" value=" "/>
                       </StringArray>
                     </Property>
                   </Properties>

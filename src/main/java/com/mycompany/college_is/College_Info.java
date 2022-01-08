@@ -9,7 +9,6 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -125,6 +124,7 @@ public class College_Info extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(12, 4, 0, 0);
         jPanel6.add(search_tf, gridBagConstraints);
 
+        searchPrice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/search-icon.png"))); // NOI18N
         searchPrice.setText("Search College");
         searchPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,7 +139,7 @@ public class College_Info extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(11, 10, 11, 0);
         jPanel6.add(searchPrice, gridBagConstraints);
 
-        searchCategoryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Community College", "Junior College", "Women's College", "Technical Institute", "Professional Schools", " " }));
+        searchCategoryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Community College", "Junior College", "Women's College", "Technical Institute", "Professional Schools" }));
         searchCategoryComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchCategoryComboBoxActionPerformed(evt);
@@ -154,6 +154,7 @@ public class College_Info extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(12, 10, 0, 0);
         jPanel6.add(searchCategoryComboBox, gridBagConstraints);
 
+        searchCategory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/search-icon.png"))); // NOI18N
         searchCategory.setText("Search College By Category");
         searchCategory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,6 +203,7 @@ public class College_Info extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(169, 206, 196));
 
+        clearTable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/clear-table-icon.png"))); // NOI18N
         clearTable.setText("Clear Table");
         clearTable.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -209,6 +211,7 @@ public class College_Info extends javax.swing.JFrame {
             }
         });
 
+        deleteRow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/delete-row-icon.png"))); // NOI18N
         deleteRow.setText("Delete Row");
         deleteRow.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -230,6 +233,7 @@ public class College_Info extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(58, 48, 66));
         jLabel9.setText("Category:");
 
+        addCollege.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/add-1-icon.png"))); // NOI18N
         addCollege.setText("Add College");
         addCollege.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -265,6 +269,7 @@ public class College_Info extends javax.swing.JFrame {
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("No");
 
+        clearField.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/clear-fields-icon.png"))); // NOI18N
         clearField.setText("Clear Fields");
         clearField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -279,10 +284,10 @@ public class College_Info extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(393, 393, 393)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(417, 417, 417))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -292,7 +297,7 @@ public class College_Info extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        addCategoryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Community College", "Junior College", "Women's College", "Technical Institute", "Professional Schools", " " }));
+        addCategoryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Community College", "Junior College", "Women's College", "Technical Institute", "Professional Schools" }));
         addCategoryComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addCategoryComboBoxActionPerformed(evt);
@@ -316,25 +321,21 @@ public class College_Info extends javax.swing.JFrame {
                                 .addGroup(jPanel3Layout.createSequentialGroup()
                                     .addGap(4, 4, 4)
                                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(name_tf, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                                    .addComponent(affiliation_tf, javax.swing.GroupLayout.Alignment.TRAILING)))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(addCategoryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(250, 250, 250)
+                        .addGap(22, 22, 22)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(addCategoryComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(name_tf)
+                            .addComponent(affiliation_tf))
+                        .addGap(246, 246, 246)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(addCollege, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(clearField, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(121, 121, 121)))
+                        .addComponent(addCollege, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(clearField, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(109, 109, 109)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -368,9 +369,9 @@ public class College_Info extends javax.swing.JFrame {
                     .addComponent(affiliation_tf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addCollege)
-                    .addComponent(clearField))
-                .addContainerGap(30, Short.MAX_VALUE))
+                    .addComponent(addCollege, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clearField, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
