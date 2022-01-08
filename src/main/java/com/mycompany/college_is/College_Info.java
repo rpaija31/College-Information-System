@@ -601,7 +601,11 @@ public class College_Info extends javax.swing.JFrame {
         } catch (HeadlessException e){ JOptionPane.showMessageDialog(this, "Unexpected error!"); }
     }
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        System.exit(0);
+            int response = JOptionPane.showConfirmDialog(this, "Do you really want to exit?", "Confirm",  JOptionPane.YES_NO_OPTION, HEIGHT);
+ 
+            if(response == 0) {
+                this.dispose();
+            }
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void deleteRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteRowActionPerformed
