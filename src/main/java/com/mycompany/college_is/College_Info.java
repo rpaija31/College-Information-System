@@ -17,7 +17,6 @@ import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -33,6 +32,9 @@ public class College_Info extends javax.swing.JFrame {
      */
     public College_Info() {
         initComponents();
+        
+        //Loads the contents of .txt file to table
+        loadTable();
     }
         
     /**
@@ -515,14 +517,34 @@ public class College_Info extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-        
+    
+    public void loadTable() {
+        String filePath = "src/main/resources/Text/table.txt";
+        FileReader fr;
+        try {
+            fr = new FileReader(filePath);
+            BufferedReader br = new BufferedReader(fr);
+            
+            DefaultTableModel model = (DefaultTableModel)table.getModel();
+            Object[] lines = br.lines().toArray();
+            
+            for(int i = 0; i < lines.length; i++) {
+                String[] row = lines[i].toString().split(",");
+                model.addRow(row);
+            }
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(College_Info.class.getName()).log(Level.SEVERE, null, ex);
+        }    
+    }
+    
     public void add(){
         DefaultTableModel defaultTableModel = (DefaultTableModel) table.getModel();
         try{
             String collegeID;
             String name = name_tf.getText();
             String affiliation = affiliation_tf.getText();
-            double price = -3.00;
+            double price = 3;
             String category = addCategoryComboBox.getSelectedItem().toString();
             String scholarship = null;
             boolean priceValid = true;
@@ -532,7 +554,7 @@ public class College_Info extends javax.swing.JFrame {
             else if(jRadioButton2.isSelected())
                  scholarship = "NO";
 
-            if (name.equals("") || affiliation.equals("") || price_tf.getText().equals("")){
+            if (name_tf.equals("") || affiliation_tf.equals("") || price_tf.getText().equals("")){
                 JOptionPane.showMessageDialog(this, "Please fill all the fields!");
             }
             else{
@@ -602,42 +624,30 @@ public class College_Info extends javax.swing.JFrame {
     }//GEN-LAST:event_search_tfActionPerformed
 
     private void clearFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearFieldActionPerformed
-       search_tf.setText(""); 
-      name_tf.setText("");
-       affiliation_tf.setText("");
-       price_tf.setText("");
+        search_tf.setText(""); 
+        name_tf.setText("");
+        affiliation_tf.setText("");
+        price_tf.setText("");
     }//GEN-LAST:event_clearFieldActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        JFileChooser fc = new JFileChooser();
-        fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-        fc.showSaveDialog(this);
-
+       String filePath = "src/main/resources/Text/table.txt";
         try {
-            File file = new File(fc.getSelectedFile().toString() + ".txt");
-
-            FileWriter fw = new FileWriter(file.getAbsoluteFile());
+            FileWriter fw = new FileWriter(filePath);
             BufferedWriter bw = new BufferedWriter(fw);
-
-            //loop for jtable rows
-            for (int i = 0; i < table.getRowCount(); i++) {
-                //loop for jtable column
-                for (int j = 0; j < table.getColumnCount(); j++) {
-                    bw.write(table.getModel().getValueAt(i, j) + "   |   ");
+            
+            for(int i = 0; i < table.getRowCount(); i++) {
+                for(int j = 0; j < table.getColumnCount(); j++) {
+                    bw.write(table.getValueAt(i, j).toString()+",");
                 }
-                //break line at the begin 
-                //break line at the end 
-                bw.write("\n____________________________________________________________________________"
-                        + "_______________________________\n");
-            }
-            //close BufferedWriter
-            bw.close();
-            //close FileWriter 
+                bw.newLine();
+             }
+             bw.close();
             fw.close();
-
-        } catch (HeadlessException | IOException | NullPointerException ex) {
+            
+        } catch (IOException ex) {
+            Logger.getLogger(College_Info.class.getName()).log(Level.SEVERE, null, ex);
         }
-        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void addCategoryComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCategoryComboBoxActionPerformed
@@ -645,33 +655,23 @@ public class College_Info extends javax.swing.JFrame {
     }//GEN-LAST:event_addCategoryComboBoxActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        BufferedReader br = null;
+        String filePath = "src/main/resources/Text/table.txt";
+        FileReader fr;
         try {
-            JFileChooser chooser = new JFileChooser();
-            chooser.showOpenDialog(null);
-            File file = chooser.getSelectedFile();
-            br = new BufferedReader(new FileReader(file));
-            String firstLine = br.readLine().trim();
-            String[] columnsName = firstLine.split(",");
+            fr = new FileReader(filePath);
+            BufferedReader br = new BufferedReader(fr);
+            
             DefaultTableModel model = (DefaultTableModel)table.getModel();
-            model.setColumnIdentifiers(columnsName);
-            Object[] tableLines  = br.lines().toArray();
-            for(int i = 0; i < tableLines.length; i++) {
-                String line = tableLines[i].toString().trim();
-                String[] dataRow = line.split("/");
-                model.addRow(dataRow);
+            Object[] lines = br.lines().toArray();
+            
+            for(int i = 0; i < lines.length; i++) {
+                String[] row = lines[i].toString().split(",");
+                model.addRow(row);
             }
+            
         } catch (FileNotFoundException ex) {
             Logger.getLogger(College_Info.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(College_Info.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                br.close();
-            } catch (IOException ex) {
-                Logger.getLogger(College_Info.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+        }    
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void clearTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearTableActionPerformed
