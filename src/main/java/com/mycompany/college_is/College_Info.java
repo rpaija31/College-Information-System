@@ -699,7 +699,6 @@ public class College_Info extends javax.swing.JFrame {
             priceList[minValuePosition] = priceList[sortPosition];
             priceList[sortPosition] = tempValue;
         }
-        
         return priceList;
     }
     
@@ -737,7 +736,7 @@ public class College_Info extends javax.swing.JFrame {
                 }
                 // calling the sort() method to sort() the array
                 double[] sortedPriceList = sort(priceList);
-                
+                                
                 // calling binarySearch() method for searching the price key
                 double result = binarySearch(sortedPriceList, price, 0, priceList.length - 1);
                 if (result == -1) {
@@ -746,7 +745,7 @@ public class College_Info extends javax.swing.JFrame {
                     String collegeName = "";
                     for (int i = 0; i < tableRowCount; i++) {
                         if (Double.parseDouble(table.getValueAt(i, 4).toString()) == result) {
-                            // extracting appliance name if matching price is found
+                            // extracting college name if matching price is found
                             collegeName = table.getValueAt(i, 1).toString();
                         }
                     }
