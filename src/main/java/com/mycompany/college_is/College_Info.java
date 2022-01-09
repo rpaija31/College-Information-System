@@ -24,6 +24,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class College_Info extends javax.swing.JFrame {
     
+    private boolean checkTable = false;
+    
     /**
      * Creates new form College_Info
      */
@@ -783,7 +785,10 @@ public class College_Info extends javax.swing.JFrame {
     }//GEN-LAST:event_addCategoryComboBoxActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        clearTable();
+        if(checkTable == false){
+            clearTable();
+            checkTable = false;
+        }
         String filePath = "src/main/resources/Text/table.txt";
         FileReader fr;
         try {
@@ -809,6 +814,8 @@ public class College_Info extends javax.swing.JFrame {
         DefaultTableModel defaultTableModel = (DefaultTableModel) table.getModel();
         if (table.getRowCount() != 0) {
             defaultTableModel.setNumRows(0);
+            JOptionPane.showMessageDialog(this, "The table has been cleared!", "Emtpy Table", JOptionPane.INFORMATION_MESSAGE);
+            checkTable = true;
         } else {
             JOptionPane.showMessageDialog(this, "The table is already cleared!", "Emtpy Table", JOptionPane.INFORMATION_MESSAGE);
         }
