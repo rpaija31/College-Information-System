@@ -579,7 +579,7 @@ public class College_Info extends javax.swing.JFrame {
                 scholarship = "NO";
             }
 
-            if (name_tf.equals("") || affiliation_tf.equals("") || price_tf.getText().equals("")){
+            if (id_tf.getText().equals("")|| name_tf.getText().equals("") || affiliation_tf.getText().equals("") || price_tf.getText().equals("")){
                 JOptionPane.showMessageDialog(this, "Please fill all the fields!");
             }
             else{                
