@@ -783,6 +783,7 @@ public class College_Info extends javax.swing.JFrame {
     }//GEN-LAST:event_addCategoryComboBoxActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        clearTable();
         String filePath = "src/main/resources/Text/table.txt";
         FileReader fr;
         try {
@@ -803,14 +804,18 @@ public class College_Info extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(this, "File opened and information added to Table!", "Saved", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void clearTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearTableActionPerformed
+    
+    public void clearTable(){
         DefaultTableModel defaultTableModel = (DefaultTableModel) table.getModel();
         if (table.getRowCount() != 0) {
             defaultTableModel.setNumRows(0);
         } else {
             JOptionPane.showMessageDialog(this, "The table is already cleared!", "Emtpy Table", JOptionPane.INFORMATION_MESSAGE);
         }
+    
+    }
+    private void clearTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearTableActionPerformed
+        clearTable();
         // TODO add your handling code here:
     }//GEN-LAST:event_clearTableActionPerformed
 
