@@ -636,11 +636,7 @@ public class College_Info extends javax.swing.JFrame {
     }//GEN-LAST:event_addCollegeActionPerformed
 
     private void searchCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchCategoryActionPerformed
-        
-    }//GEN-LAST:event_searchCategoryActionPerformed
-
-    private void searchCategoryComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchCategoryComboBoxActionPerformed
-        // getting selected item from the search by category combobox
+           // getting selected item from the search by category combobox
         String category = searchCategoryComboBox.getSelectedItem().toString();
 
         //initializing the array list to store the row index of the category found
@@ -667,6 +663,10 @@ public class College_Info extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, message, "Category Search", JOptionPane.INFORMATION_MESSAGE);
         }
+    }//GEN-LAST:event_searchCategoryActionPerformed
+
+    private void searchCategoryComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchCategoryComboBoxActionPerformed
+     
     }//GEN-LAST:event_searchCategoryComboBoxActionPerformed
 
     //sorting the final price values stored in the array
