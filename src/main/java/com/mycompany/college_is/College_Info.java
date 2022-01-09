@@ -699,7 +699,7 @@ public class College_Info extends javax.swing.JFrame {
             priceList[minValuePosition] = priceList[sortPosition];
             priceList[sortPosition] = tempValue;
         }
-        return priceList;
+         return priceList;
     }
     
     //binary search implementation for search by price 
@@ -743,7 +743,7 @@ public class College_Info extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "No College Found for this price", "No Matching College", JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     String collegeName = "";
-                    for (int i = 0; i < tableRowCount; i++) {
+                    for (int i = tableRowCount - 1; i > 0; i--) {
                         if (Double.parseDouble(table.getValueAt(i, 4).toString()) == result) {
                             // extracting college name if matching price is found
                             collegeName = table.getValueAt(i, 1).toString();
@@ -763,12 +763,16 @@ public class College_Info extends javax.swing.JFrame {
     }//GEN-LAST:event_search_tfActionPerformed
 
     private void clearFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearFieldActionPerformed
-        id_tf.setText("");
-        search_tf.setText(""); 
-        name_tf.setText("");
-        affiliation_tf.setText("");
-        price_tf.setText("");
-        JOptionPane.showMessageDialog(this, "Field cleared!");
+        if(id_tf.getText().isEmpty() && search_tf.getText().isEmpty() && name_tf.getText().isEmpty() && affiliation_tf.getText().isEmpty() && price_tf.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Fields already cleared!");
+        } else {
+            id_tf.setText("");
+            search_tf.setText(""); 
+            name_tf.setText("");
+            affiliation_tf.setText("");
+            price_tf.setText("");
+            JOptionPane.showMessageDialog(this, "Fields cleared!");
+        }
     }//GEN-LAST:event_clearFieldActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
