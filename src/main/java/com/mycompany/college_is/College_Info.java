@@ -775,6 +775,7 @@ public class College_Info extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(College_Info.class.getName()).log(Level.SEVERE, null, ex);
         }
+        JOptionPane.showMessageDialog(this, "Table information saved to File!", "Saved", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void addCategoryComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCategoryComboBoxActionPerformed
@@ -799,6 +800,8 @@ public class College_Info extends javax.swing.JFrame {
         } catch (FileNotFoundException ex) {
             Logger.getLogger(College_Info.class.getName()).log(Level.SEVERE, null, ex);
         }    
+        
+        JOptionPane.showMessageDialog(this, "File opened and information added to Table!", "Saved", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void clearTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearTableActionPerformed
