@@ -26,6 +26,7 @@ public class College_Info extends javax.swing.JFrame {
     
     private boolean checkTable = false;
     
+    
     /**
      * Creates new form College_Info
      */
@@ -572,6 +573,7 @@ public class College_Info extends javax.swing.JFrame {
             String category = addCategoryComboBox.getSelectedItem().toString();
             String scholarship = null;
             boolean priceValid = true;
+            boolean checkID = false;
              
             if(jRadioButton1.isSelected()) {
                   scholarship = "YES";
@@ -592,7 +594,16 @@ public class College_Info extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Enter correct price!");
                     priceValid = false;
                 }
-                if (priceValid == true){
+        
+                for (int i = 0; i < table.getRowCount(); i++) {
+                    if (table.getModel().getValueAt(i, 0).equals(collegeID)) {
+                    //get the all row values at column index 0
+                    JOptionPane.showMessageDialog(this, "College ID cannot be same!");
+                    checkID = true;
+                    }
+                }
+                
+                if (priceValid == true && checkID == false){
                     if (price <= 0.00){
                         JOptionPane.showMessageDialog(this, "Price cannot be negative or zero!");
                     } else{
