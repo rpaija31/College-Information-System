@@ -609,6 +609,7 @@ public class College_Info extends javax.swing.JFrame {
                     } else{
                         Object[] add = {collegeID, name, category, affiliation, price, scholarship};
                         defaultTableModel.addRow(add);
+                        JOptionPane.showMessageDialog(this, "College added!");
                     }
                 }
             }
@@ -768,6 +769,7 @@ public class College_Info extends javax.swing.JFrame {
         name_tf.setText("");
         affiliation_tf.setText("");
         price_tf.setText("");
+        JOptionPane.showMessageDialog(this, "Field cleared!");
     }//GEN-LAST:event_clearFieldActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
