@@ -7,3 +7,8 @@
 7,Western Region Campus,Community College,Tribhuvan University,55650.0,YES,
 8,Padma Kanya Campus,Women's College,Tribhuvan University,20300.0,NO,
 9,Global College of Management,Professional Schools,Tribhuvan University,2000000.0,YES,
+10,Kathmandu Education Campus,Community College,Kathmandu University,50000.0,YES,
+11,Prithvi Narayan Campus,Community College,Tribhuvan University,65000.0,YES,
+12,Herald College,Technical Institute,University of Wolverhampton,700000.0,NO,
+13,Janapriya Campus,Junior College,Tribhuvan University,40000.0,NO,
+14,J.D. Women's College,Women's College,Kathmandu University,50000.0,NO,
